@@ -7,7 +7,7 @@ undefined-plugin> stack test
 undefined-solve-plugin-1.0.0.0: build (lib + test)
 undefined-stop-plugin-1.0.0.0: build (lib + test)
 undefined-init-plugin-1.0.0.0: build (lib + test)
-Log files have been written to: /.../undefined-plugin/.stack-work/logs/
+...
 Progress 3/6
 
 --  While building custom Setup.hs for package undefined-solve-plugin-1.0.0.0 using:
