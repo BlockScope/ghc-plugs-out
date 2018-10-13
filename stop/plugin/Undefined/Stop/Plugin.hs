@@ -1,4 +1,4 @@
-module Undefined.Plugin (plugin) where
+module Undefined.Stop.Plugin (plugin) where
 
 import Plugins (Plugin(..), tcPlugin, defaultPlugin)
 import TcRnTypes (TcPluginM, TcPluginResult, Ct, TcPlugin(..))
@@ -12,16 +12,10 @@ undefinedPlugin =
     tracePlugin
         "undefined-plugin"
         TcPlugin
-            { tcPluginInit  = initializer
+            { tcPluginInit  = return ()
             , tcPluginSolve = solver
-            , tcPluginStop  = stopper
+            , tcPluginStop  = const $ undefined
             }
-
-initializer :: TcPluginM ()
-initializer = return ()
-
-stopper :: () -> TcPluginM ()
-stopper = const $ return ()
 
 solver :: () -> [Ct] -> [Ct] -> [Ct] -> TcPluginM TcPluginResult
 solver = undefined

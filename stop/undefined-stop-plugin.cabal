@@ -2,11 +2,10 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 5238fec5c2d2a33cb30db9e3d7d0e211b5c102d8f0eea38ef3134611f489b108
+-- hash: 517d4b74eb21774f754796bb648a889a66cbcf138f98e9dcb51e099b83054872
 
-name:           undefined-plugin
+name:           undefined-stop-plugin
 version:        1.0.0.0
-license-file:   LICENSE
 build-type:     Simple
 cabal-version:  >= 1.10
 extra-source-files:
@@ -14,9 +13,9 @@ extra-source-files:
 
 library
   exposed-modules:
-      Undefined.Plugin
+      Undefined.Stop.Plugin
   other-modules:
-      Paths_undefined_plugin
+      Paths_undefined_stop_plugin
   hs-source-dirs:
       plugin
   ghc-options: -Wall -fno-warn-unticked-promoted-constructors
@@ -33,11 +32,11 @@ test-suite invoke
   type: exitcode-stdio-1.0
   main-is: Main.hs
   other-modules:
-      Paths_undefined_plugin
+      Paths_undefined_stop_plugin
   hs-source-dirs:
       plugin-test
   ghc-options: -Wall -fno-warn-unticked-promoted-constructors
   build-depends:
       base
-    , undefined-plugin
+    , undefined-stop-plugin
   default-language: Haskell2010

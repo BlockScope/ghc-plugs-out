@@ -1,4 +1,4 @@
-name: undefined-plugin
+name: undefined-stop-plugin
 extra-source-files:
 - package.yaml
 ghc-options:
@@ -14,12 +14,12 @@ library:
     - containers
     source-dirs: plugin
     exposed-modules:
-    - Undefined.Plugin
+    - Undefined.Stop.Plugin
 tests:
     invoke:
         dependencies:
         - base
-        - undefined-plugin
+        - undefined-stop-plugin
         main: Main.hs
         source-dirs:
         - plugin-test

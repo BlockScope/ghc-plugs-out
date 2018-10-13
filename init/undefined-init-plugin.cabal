@@ -1,0 +1,42 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 0246d973c5ba528cad2e2987987f3e0751fb203320279fc4b2c3131fc5d022a1
+
+name:           undefined-init-plugin
+version:        1.0.0.0
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    package.yaml
+
+library
+  exposed-modules:
+      Undefined.Init.Plugin
+  other-modules:
+      Paths_undefined_init_plugin
+  hs-source-dirs:
+      plugin
+  ghc-options: -Wall -fno-warn-unticked-promoted-constructors
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , deepseq >=1.3 && <1.5
+    , ghc
+    , ghc-tcplugins-extra
+    , template-haskell
+  default-language: Haskell2010
+
+test-suite invoke
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      Paths_undefined_init_plugin
+  hs-source-dirs:
+      plugin-test
+  ghc-options: -Wall -fno-warn-unticked-promoted-constructors
+  build-depends:
+      base
+    , undefined-init-plugin
+  default-language: Haskell2010
