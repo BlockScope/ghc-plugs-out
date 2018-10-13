@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 4d800e94bf5247db3bf8e313759d02879f867ac67419c0d3ce1249b628733cc4
+-- hash: a662efaae2f147b6d224bca17fe250da9b92ea51e6549e6b99fc879ce32d1278
 
 name:           undefined-solve-plugin
 version:        1.0.0.0
@@ -18,7 +18,7 @@ library
       Paths_undefined_solve_plugin
   hs-source-dirs:
       plugin
-  ghc-options: -Wall -fno-warn-unticked-promoted-constructors
+  ghc-options: -Wall
   build-depends:
       base >=4.7 && <5
     , containers
@@ -35,7 +35,7 @@ test-suite invoke
       Paths_undefined_solve_plugin
   hs-source-dirs:
       plugin-test
-  ghc-options: -Wall -fno-warn-unticked-promoted-constructors
+  ghc-options: -Wall
   build-depends:
       base
     , undefined-solve-plugin

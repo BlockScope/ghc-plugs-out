@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 517d4b74eb21774f754796bb648a889a66cbcf138f98e9dcb51e099b83054872
+-- hash: 7682e6be5e1e83cbeca7b743567b77c3f2362064a247701787410a19fa59fac9
 
 name:           undefined-stop-plugin
 version:        1.0.0.0
@@ -18,7 +18,7 @@ library
       Paths_undefined_stop_plugin
   hs-source-dirs:
       plugin
-  ghc-options: -Wall -fno-warn-unticked-promoted-constructors
+  ghc-options: -Wall
   build-depends:
       base >=4.7 && <5
     , containers
@@ -35,7 +35,7 @@ test-suite invoke
       Paths_undefined_stop_plugin
   hs-source-dirs:
       plugin-test
-  ghc-options: -Wall -fno-warn-unticked-promoted-constructors
+  ghc-options: -Wall
   build-depends:
       base
     , undefined-stop-plugin

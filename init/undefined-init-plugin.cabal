@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 0246d973c5ba528cad2e2987987f3e0751fb203320279fc4b2c3131fc5d022a1
+-- hash: d0b79226abe0a1c752aa9ebdbad17676a2e622966805679d5475cec78821e827
 
 name:           undefined-init-plugin
 version:        1.0.0.0
@@ -18,7 +18,7 @@ library
       Paths_undefined_init_plugin
   hs-source-dirs:
       plugin
-  ghc-options: -Wall -fno-warn-unticked-promoted-constructors
+  ghc-options: -Wall
   build-depends:
       base >=4.7 && <5
     , containers
@@ -35,7 +35,7 @@ test-suite invoke
       Paths_undefined_init_plugin
   hs-source-dirs:
       plugin-test
-  ghc-options: -Wall -fno-warn-unticked-promoted-constructors
+  ghc-options: -Wall
   build-depends:
       base
     , undefined-init-plugin
