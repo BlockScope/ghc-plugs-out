@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a81bd53db1d5125064122349bb0cbf363f00cb8fbfbf2d803cf298e11b9253f5
+-- hash: 5238fec5c2d2a33cb30db9e3d7d0e211b5c102d8f0eea38ef3134611f489b108
 
 name:           undefined-plugin
 version:        1.0.0.0
@@ -38,5 +38,6 @@ test-suite invoke
       plugin-test
   ghc-options: -Wall -fno-warn-unticked-promoted-constructors
   build-depends:
-      undefined-plugin
+      base
+    , undefined-plugin
   default-language: Haskell2010

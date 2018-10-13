@@ -18,6 +18,7 @@ library:
 tests:
     invoke:
         dependencies:
+        - base
         - undefined-plugin
         main: Main.hs
         source-dirs:

@@ -5,9 +5,7 @@ import TcRnTypes (TcPluginM, TcPluginResult, Ct, TcPlugin(..))
 import GHC.TcPluginM.Extra (tracePlugin)
 
 plugin :: Plugin
-plugin =
-    defaultPlugin
-        { tcPlugin = const $ Just undefinedPlugin }
+plugin = defaultPlugin { tcPlugin = const $ Just undefinedPlugin }
 
 undefinedPlugin :: TcPlugin
 undefinedPlugin =
@@ -16,11 +14,14 @@ undefinedPlugin =
         TcPlugin
             { tcPluginInit  = initializer
             , tcPluginSolve = solver
-            , tcPluginStop  = const $ return ()
+            , tcPluginStop  = stopper
             }
 
 initializer :: TcPluginM ()
-initializer = undefined
+initializer = return ()
+
+stopper :: () -> TcPluginM ()
+stopper = const $ return ()
 
 solver :: () -> [Ct] -> [Ct] -> [Ct] -> TcPluginM TcPluginResult
 solver = undefined
