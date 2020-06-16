@@ -1,8 +1,8 @@
 # ghc-plugs-out
 This package's GHC plugins that do not behave well. They have undefined
 implementations for plugin functions init, solve and stop. When GHC calls into
-any of these plugins it panics. This can be seen by compiling one of the test
-suites.
+any of these plugins it panics. This can be seen while building any one of the
+test suites.
 
 ```
 > cabal build test-undefined-init
