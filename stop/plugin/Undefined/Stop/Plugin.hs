@@ -1,7 +1,7 @@
 module Undefined.Stop.Plugin (plugin) where
 
 import Plugins (Plugin(..), tcPlugin, defaultPlugin)
-import TcRnTypes (TcPluginM, TcPluginResult(..), Ct, TcPlugin(..))
+import TcRnTypes (TcPluginResult(..), TcPlugin(..))
 import GHC.TcPluginM.Extra (tracePlugin)
 
 plugin :: Plugin

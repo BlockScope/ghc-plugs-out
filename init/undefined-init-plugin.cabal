@@ -1,13 +1,14 @@
--- This file has been generated from package.yaml by hpack version 0.28.2.
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d0b79226abe0a1c752aa9ebdbad17676a2e622966805679d5475cec78821e827
+-- hash: 7c793698103d2a7c651e75b13a18cfeb1c059baedc460c022aa6782de6aac2d7
 
 name:           undefined-init-plugin
 version:        1.0.0.0
 build-type:     Simple
-cabal-version:  >= 1.10
 extra-source-files:
     package.yaml
 

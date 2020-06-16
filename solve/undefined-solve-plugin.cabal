@@ -1,13 +1,14 @@
--- This file has been generated from package.yaml by hpack version 0.28.2.
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a662efaae2f147b6d224bca17fe250da9b92ea51e6549e6b99fc879ce32d1278
+-- hash: a5dc795e8a34e659f1778cc95cb55a1d1bd2fe3782bbb46913dee8372f5631c6
 
 name:           undefined-solve-plugin
 version:        1.0.0.0
 build-type:     Simple
-cabal-version:  >= 1.10
 extra-source-files:
     package.yaml
 

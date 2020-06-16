@@ -1,7 +1,7 @@
 module Undefined.Solve.Plugin (plugin) where
 
 import Plugins (Plugin(..), tcPlugin, defaultPlugin)
-import TcRnTypes (TcPluginM, TcPluginResult, Ct, TcPlugin(..))
+import TcRnTypes (TcPlugin(..))
 import GHC.TcPluginM.Extra (tracePlugin)
 
 plugin :: Plugin

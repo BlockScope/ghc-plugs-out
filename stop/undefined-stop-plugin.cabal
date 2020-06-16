@@ -1,13 +1,14 @@
--- This file has been generated from package.yaml by hpack version 0.28.2.
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 7682e6be5e1e83cbeca7b743567b77c3f2362064a247701787410a19fa59fac9
+-- hash: 59df65fe58ef1a3a8b253f57df7b2044e8ce0e62d1e0443d18597c1b794ed7b8
 
 name:           undefined-stop-plugin
 version:        1.0.0.0
 build-type:     Simple
-cabal-version:  >= 1.10
 extra-source-files:
     package.yaml
 
