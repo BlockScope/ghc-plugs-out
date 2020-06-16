@@ -47,7 +47,7 @@ test-suite test-undefined-init
   type: exitcode-stdio-1.0
   main-is: Main.hs
   hs-source-dirs:
-      init/plugin-test
+      init/test-suite
   ghc-options: -Wall
   build-depends:
       base
@@ -58,7 +58,7 @@ test-suite test-undefined-solve
   type: exitcode-stdio-1.0
   main-is: Main.hs
   hs-source-dirs:
-      solve/plugin-test
+      solve/test-suite
   ghc-options: -Wall
   build-depends:
       base
@@ -69,7 +69,7 @@ test-suite test-undefined-stop
   type: exitcode-stdio-1.0
   main-is: Main.hs
   hs-source-dirs:
-      stop/plugin-test
+      stop/test-suite
   ghc-options: -Wall
   build-depends:
       base
