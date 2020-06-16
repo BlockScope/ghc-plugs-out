@@ -1,18 +1,22 @@
 # ghc-plugs-out
 This package's GHC plugins that do not behave well. They have undefined
 implementations for plugin functions init, solve and stop. When GHC calls into
-the plugin it panics.
+any of these plugins it panics. This can be seen by compiling one of the test
+suites.
 
 ```
-> cabal build
-> stack test undefined-init-invoke
-> stack test undefined-solve-invoke
-> stack test undefined-stop-invoke
+> cabal build undefined-init-invoke
+[1 of 1] Compiling Undefined.Init.Plugin
+[1 of 1] Compiling Main
+ghc: panic! (the 'impossible' happened)
+Please report this as a GHC bug:  http://www.haskell.org/ghc/reportabug
 ```
 
 ```
-> stack build
-> stack test ghc-plugs-out:undefined-init-invoke
-> stack test ghc-plugs-out:undefined-solve-invoke
 > stack test ghc-plugs-out:undefined-stop-invoke
+[1 of 1] Compiling Undefined.Solve.Plugin
+[1 of 1] Compiling Undefined.Stop.Plugin
+[1 of 1] Compiling Main
+ghc: panic! (the 'impossible' happened)
+Please report this as a GHC bug:  https://www.haskell.org/ghc/reportabug
 ```
