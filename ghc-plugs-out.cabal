@@ -43,7 +43,7 @@ library undefined-stop-plugin
     , ghc
   default-language: Haskell2010
 
-test-suite undefined-init-invoke
+test-suite test-undefined-init
   type: exitcode-stdio-1.0
   main-is: Main.hs
   hs-source-dirs:
@@ -54,7 +54,7 @@ test-suite undefined-init-invoke
     , undefined-init-plugin
   default-language: Haskell2010
 
-test-suite undefined-solve-invoke
+test-suite test-undefined-solve
   type: exitcode-stdio-1.0
   main-is: Main.hs
   hs-source-dirs:
@@ -65,7 +65,7 @@ test-suite undefined-solve-invoke
     , undefined-solve-plugin
   default-language: Haskell2010
 
-test-suite undefined-stop-invoke
+test-suite test-undefined-stop
   type: exitcode-stdio-1.0
   main-is: Main.hs
   hs-source-dirs:
