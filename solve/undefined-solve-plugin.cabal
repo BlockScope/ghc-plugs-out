@@ -1,16 +1,22 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.dhall by hpack version 0.31.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a5dc795e8a34e659f1778cc95cb55a1d1bd2fe3782bbb46913dee8372f5631c6
+-- hash: 766934d77930768cfe9c50819b950923ab384686d64babd7e75108472cc1d5f7
 
 name:           undefined-solve-plugin
 version:        1.0.0.0
+author:         Phil de Joux
+maintainer:     phil.dejoux@blockscope.com
+copyright:      © 2020 Phil de Joux, © 2020 Block Scope Limited
+license:        MPL-2.0
+license-file:   ../LICENSE.md
+tested-with:    GHC == 8.10.1
 build-type:     Simple
 extra-source-files:
-    package.yaml
+    package.dhall
 
 library
   exposed-modules:
@@ -21,9 +27,9 @@ library
       plugin
   ghc-options: -Wall
   build-depends:
-      base >=4.7 && <5
+      base
     , containers
-    , deepseq >=1.3 && <1.5
+    , deepseq
     , ghc
     , ghc-tcplugins-extra
     , template-haskell
