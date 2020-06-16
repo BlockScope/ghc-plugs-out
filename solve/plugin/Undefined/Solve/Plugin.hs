@@ -2,13 +2,12 @@ module Undefined.Solve.Plugin (plugin) where
 
 import Plugins (Plugin(..), tcPlugin, defaultPlugin)
 import TcRnTypes (TcPlugin(..))
-import GHC.TcPluginM.Extra (tracePlugin)
 
 plugin :: Plugin
 plugin = defaultPlugin { tcPlugin = const $ Just undefinedPlugin }
 
 undefinedPlugin :: TcPlugin
-undefinedPlugin = tracePlugin "undefined-solve-plugin" $
+undefinedPlugin =
     TcPlugin
         { tcPluginInit  = return ()
         , tcPluginSolve = \_ _ _ _ -> undefined
