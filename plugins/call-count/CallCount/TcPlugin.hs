@@ -1,21 +1,17 @@
 {-# LANGUAGE QuasiQuotes, NamedFieldPuns #-}
 
-module CallCount.Plugin (plugin) where
+module CallCount.TcPlugin (callCount) where
 
 import Language.Haskell.Printf (s)
 import Data.IORef (IORef)
 import IOEnv (newMutVar, readMutVar, writeMutVar)
 import TcPluginM (tcPluginIO)
-import Plugins (Plugin(..), tcPlugin, defaultPlugin)
 import TcRnTypes (TcPluginResult(..), TcPlugin(..), unsafeTcPluginTcM)
 
 newtype State = State{callref :: IORef Int}
 
-plugin :: Plugin
-plugin = defaultPlugin { tcPlugin = const $ Just undefinedPlugin }
-
-undefinedPlugin :: TcPlugin
-undefinedPlugin =
+callCount :: TcPlugin
+callCount =
     TcPlugin
         { tcPluginInit = return . State =<< (unsafeTcPluginTcM $ newMutVar 1)
 
