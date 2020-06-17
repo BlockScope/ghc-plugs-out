@@ -11,7 +11,14 @@ tested-with:    GHC == 8.10.1
 build-type:     Simple
 
 common opts
-  ghc-options: -Wall -fhide-source-paths
+  ghc-options:
+    -Wall
+    -Werror
+    -Wincomplete-uni-patterns
+    -Wcompat
+    -Widentities
+    -Wredundant-constraints
+    -fhide-source-paths
 
 library no-op-plugin
   import: opts
