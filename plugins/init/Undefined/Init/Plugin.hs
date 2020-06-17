@@ -1,15 +1,7 @@
 module Undefined.Init.Plugin (plugin) where
 
-import Plugins (Plugin(..), tcPlugin, defaultPlugin)
-import TcRnTypes (TcPluginResult(..), TcPlugin(..))
+import Plugins (Plugin)
+import NoOp.Plugin (undefInit, mkPureTcPlugin)
 
 plugin :: Plugin
-plugin = defaultPlugin { tcPlugin = const $ Just undefinedPlugin }
-
-undefinedPlugin :: TcPlugin
-undefinedPlugin =
-    TcPlugin
-        { tcPluginInit = undefined
-        , tcPluginSolve = \_ _ _ _ -> return $ TcPluginOk [] []
-        , tcPluginStop = const $ return ()
-        }
+plugin = mkPureTcPlugin undefInit

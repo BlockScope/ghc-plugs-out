@@ -1,15 +1,7 @@
 module Undefined.Stop.Plugin (plugin) where
 
-import Plugins (Plugin(..), tcPlugin, defaultPlugin)
-import TcRnTypes (TcPluginResult(..), TcPlugin(..))
+import Plugins (Plugin)
+import NoOp.Plugin (undefStop, mkPureTcPlugin)
 
 plugin :: Plugin
-plugin = defaultPlugin { tcPlugin = const $ Just undefinedPlugin }
-
-undefinedPlugin :: TcPlugin
-undefinedPlugin =
-    TcPlugin
-        { tcPluginInit = return ()
-        , tcPluginSolve = \_ _ _ _ -> return $ TcPluginOk [] []
-        , tcPluginStop = const $ undefined
-        }
+plugin = mkPureTcPlugin undefStop
