@@ -19,6 +19,7 @@ common opts
     -Widentities
     -Wredundant-constraints
     -fhide-source-paths
+  default-language: Haskell2010
 
 library no-op-plugin
   import: opts
@@ -29,7 +30,6 @@ library no-op-plugin
   build-depends:
       base
     , ghc
-  default-language: Haskell2010
 
 library undefined-init-plugin
   import: opts
@@ -41,7 +41,6 @@ library undefined-init-plugin
       base
     , ghc
     , no-op-plugin
-  default-language: Haskell2010
 
 library undefined-solve-plugin
   import: opts
@@ -53,7 +52,6 @@ library undefined-solve-plugin
       base
     , ghc
     , no-op-plugin
-  default-language: Haskell2010
 
 library undefined-stop-plugin
   import: opts
@@ -65,7 +63,6 @@ library undefined-stop-plugin
       base
     , ghc
     , no-op-plugin
-  default-language: Haskell2010
 
 library call-count-plugin
   import: opts
@@ -80,7 +77,6 @@ library call-count-plugin
     , ghc
     , th-printf
     , no-op-plugin
-  default-language: Haskell2010
 
 test-suite test-undefined-init
   import: opts
@@ -91,7 +87,6 @@ test-suite test-undefined-init
   build-depends:
       base
     , undefined-init-plugin
-  default-language: Haskell2010
 
 test-suite test-undefined-init-carefree
   import: opts
@@ -102,7 +97,6 @@ test-suite test-undefined-init-carefree
   build-depends:
       base
     , undefined-init-plugin
-  default-language: Haskell2010
 
 test-suite test-undefined-solve
   import: opts
@@ -113,7 +107,6 @@ test-suite test-undefined-solve
   build-depends:
       base
     , undefined-solve-plugin
-  default-language: Haskell2010
 
 test-suite test-undefined-solve-carefree
   import: opts
@@ -124,7 +117,6 @@ test-suite test-undefined-solve-carefree
   build-depends:
       base
     , undefined-solve-plugin
-  default-language: Haskell2010
 
 test-suite test-undefined-stop
   import: opts
@@ -135,7 +127,6 @@ test-suite test-undefined-stop
   build-depends:
       base
     , undefined-stop-plugin
-  default-language: Haskell2010
 
 test-suite test-undefined-stop-carefree
   import: opts
@@ -146,7 +137,6 @@ test-suite test-undefined-stop-carefree
   build-depends:
       base
     , undefined-stop-plugin
-  default-language: Haskell2010
 
 test-suite test-wireup-pure-by-option
   import: opts
@@ -158,7 +148,6 @@ test-suite test-wireup-pure-by-option
   build-depends:
       base
     , call-count-plugin
-  default-language: Haskell2010
 
 test-suite test-wireup-pure-by-pragma
   import: opts
@@ -169,7 +158,6 @@ test-suite test-wireup-pure-by-pragma
   build-depends:
       base
     , call-count-plugin
-  default-language: Haskell2010
 
 test-suite test-wireup-pure-by-both
   import: opts
@@ -181,7 +169,6 @@ test-suite test-wireup-pure-by-both
   build-depends:
       base
     , call-count-plugin
-  default-language: Haskell2010
 
 test-suite test-wireup-impure-by-option
   import: opts
@@ -193,7 +180,6 @@ test-suite test-wireup-impure-by-option
   build-depends:
       base
     , call-count-plugin
-  default-language: Haskell2010
 
 test-suite test-wireup-impure-by-pragma
   import: opts
@@ -204,7 +190,6 @@ test-suite test-wireup-impure-by-pragma
   build-depends:
       base
     , call-count-plugin
-  default-language: Haskell2010
 
 test-suite test-wireup-impure-by-both
   import: opts
@@ -216,4 +201,3 @@ test-suite test-wireup-impure-by-both
   build-depends:
       base
     , call-count-plugin
-  default-language: Haskell2010
