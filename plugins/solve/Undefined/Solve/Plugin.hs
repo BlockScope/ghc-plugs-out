@@ -9,7 +9,7 @@ plugin = defaultPlugin { tcPlugin = const $ Just undefinedPlugin }
 undefinedPlugin :: TcPlugin
 undefinedPlugin =
     TcPlugin
-        { tcPluginInit  = return ()
+        { tcPluginInit = return ()
         , tcPluginSolve = \_ _ _ _ -> undefined
-        , tcPluginStop  = const $ return ()
+        , tcPluginStop = const $ return ()
         }

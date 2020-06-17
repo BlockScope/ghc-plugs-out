@@ -14,7 +14,7 @@ library undefined-init-plugin
   exposed-modules:
       Undefined.Init.Plugin
   hs-source-dirs:
-      init/plugin
+      plugins/init
   ghc-options: -Wall
   build-depends:
       base
@@ -25,7 +25,7 @@ library undefined-solve-plugin
   exposed-modules:
       Undefined.Solve.Plugin
   hs-source-dirs:
-      solve/plugin
+      plugins/solve
   ghc-options: -Wall
   build-depends:
       base
@@ -36,18 +36,30 @@ library undefined-stop-plugin
   exposed-modules:
       Undefined.Stop.Plugin
   hs-source-dirs:
-      stop/plugin
+      plugins/stop
   ghc-options: -Wall
   build-depends:
       base
     , ghc
   default-language: Haskell2010
 
+library call-count-plugin
+  exposed-modules:
+      CallCount.Plugin
+  hs-source-dirs:
+      plugins/call-count
+  ghc-options: -Wall
+  build-depends:
+      base
+    , ghc
+    , th-printf
+  default-language: Haskell2010
+
 test-suite test-undefined-init
   type: exitcode-stdio-1.0
   main-is: Main.hs
   hs-source-dirs:
-      init/test-suite
+      test-suites/undef-init
   ghc-options: -Wall
   build-depends:
       base
@@ -58,7 +70,7 @@ test-suite test-undefined-solve
   type: exitcode-stdio-1.0
   main-is: Main.hs
   hs-source-dirs:
-      solve/test-suite
+      test-suites/undef-solve
   ghc-options: -Wall
   build-depends:
       base
@@ -69,9 +81,42 @@ test-suite test-undefined-stop
   type: exitcode-stdio-1.0
   main-is: Main.hs
   hs-source-dirs:
-      stop/test-suite
+      test-suites/undef-stop
   ghc-options: -Wall
   build-depends:
       base
     , undefined-stop-plugin
+  default-language: Haskell2010
+
+test-suite test-wireup-by-options
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs:
+      test-suites/wireup-by-options
+  ghc-options: -Wall
+  build-depends:
+      base
+    , call-count-plugin
+  default-language: Haskell2010
+
+test-suite test-wireup-by-pragma
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs:
+      test-suites/wireup-by-pragma
+  ghc-options: -Wall
+  build-depends:
+      base
+    , call-count-plugin
+  default-language: Haskell2010
+
+test-suite test-wireup-by-both
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs:
+      test-suites/wireup-by-pragma
+  ghc-options: -Wall
+  build-depends:
+      base
+    , call-count-plugin
   default-language: Haskell2010
