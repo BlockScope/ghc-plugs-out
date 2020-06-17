@@ -19,7 +19,6 @@ library no-op-plugin
       NoOp.Plugin
   hs-source-dirs:
       plugins/noop
-  ghc-options: -Wall
   build-depends:
       base
     , ghc
@@ -31,7 +30,6 @@ library undefined-init-plugin
       Undefined.Init.Plugin
   hs-source-dirs:
       plugins/init
-  ghc-options: -Wall
   build-depends:
       base
     , ghc
@@ -44,7 +42,6 @@ library undefined-solve-plugin
       Undefined.Solve.Plugin
   hs-source-dirs:
       plugins/solve
-  ghc-options: -Wall
   build-depends:
       base
     , ghc
@@ -57,7 +54,6 @@ library undefined-stop-plugin
       Undefined.Stop.Plugin
   hs-source-dirs:
       plugins/stop
-  ghc-options: -Wall
   build-depends:
       base
     , ghc
@@ -72,7 +68,6 @@ library call-count-plugin
       CallCount.Impure.Plugin
   hs-source-dirs:
       plugins/call-count
-  ghc-options: -Wall
   build-depends:
       base
     , ghc
@@ -86,7 +81,6 @@ test-suite test-undefined-init
   main-is: Main.hs
   hs-source-dirs:
       test-suites/undef-init
-  ghc-options: -Wall
   build-depends:
       base
     , undefined-init-plugin
@@ -98,7 +92,6 @@ test-suite test-undefined-init-carefree
   main-is: Main.hs
   hs-source-dirs:
       test-suites/undef-init-carefree
-  ghc-options: -Wall
   build-depends:
       base
     , undefined-init-plugin
@@ -110,7 +103,6 @@ test-suite test-undefined-solve
   main-is: Main.hs
   hs-source-dirs:
       test-suites/undef-solve
-  ghc-options: -Wall
   build-depends:
       base
     , undefined-solve-plugin
@@ -122,7 +114,6 @@ test-suite test-undefined-solve-carefree
   main-is: Main.hs
   hs-source-dirs:
       test-suites/undef-solve-carefree
-  ghc-options: -Wall
   build-depends:
       base
     , undefined-solve-plugin
@@ -134,7 +125,6 @@ test-suite test-undefined-stop
   main-is: Main.hs
   hs-source-dirs:
       test-suites/undef-stop
-  ghc-options: -Wall
   build-depends:
       base
     , undefined-stop-plugin
@@ -146,7 +136,6 @@ test-suite test-undefined-stop-carefree
   main-is: Main.hs
   hs-source-dirs:
       test-suites/undef-stop-carefree
-  ghc-options: -Wall
   build-depends:
       base
     , undefined-stop-plugin
@@ -170,7 +159,6 @@ test-suite test-wireup-pure-by-pragma
   main-is: Main.hs
   hs-source-dirs:
       test-suites/wireup-pure-by-pragma
-  ghc-options: -Wall
   build-depends:
       base
     , call-count-plugin
@@ -206,7 +194,6 @@ test-suite test-wireup-impure-by-pragma
   main-is: Main.hs
   hs-source-dirs:
       test-suites/wireup-impure-by-pragma
-  ghc-options: -Wall
   build-depends:
       base
     , call-count-plugin
