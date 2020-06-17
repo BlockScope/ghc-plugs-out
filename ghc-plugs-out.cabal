@@ -135,12 +135,12 @@ test-suite test-undefined-stop-carefree
     , undefined-stop-plugin
   default-language: Haskell2010
 
-test-suite test-wireup-by-options
+test-suite test-wireup-by-option
   type: exitcode-stdio-1.0
   main-is: Main.hs
   hs-source-dirs:
-      test-suites/wireup-by-options
-  ghc-options: -Wall
+      test-suites/wireup-by-option
+  ghc-options: -Wall -fplugin CallCount.Plugin
   build-depends:
       base
     , call-count-plugin
@@ -162,7 +162,7 @@ test-suite test-wireup-by-both
   main-is: Main.hs
   hs-source-dirs:
       test-suites/wireup-by-pragma
-  ghc-options: -Wall
+  ghc-options: -Wall -fplugin CallCount.Plugin
   build-depends:
       base
     , call-count-plugin
