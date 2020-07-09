@@ -17,7 +17,7 @@ callCount =
 
         , tcPluginSolve = \State{callref = c} _ _ _ -> do
             n <- unsafeTcPluginTcM $ readMutVar c
-            tcPluginIO . putStrLn $ [s|>>> GHC-TcPlugin-CallCount (%d)|] n
+            tcPluginIO . putStrLn $ [s|>>> GHC-TcPlugin #%d|] n
             unsafeTcPluginTcM $ writeMutVar c (n + 1)
             return $ TcPluginOk [] []
 

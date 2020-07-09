@@ -201,3 +201,13 @@ test-suite test-wireup-impure-by-both
   build-depends:
       base
     , call-count-plugin
+
+test-suite test-counter
+  import: opts
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs:
+      test-suites/counter
+  build-depends:
+      base
+    , call-count-plugin
