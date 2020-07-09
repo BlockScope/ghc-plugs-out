@@ -202,12 +202,34 @@ test-suite test-wireup-impure-by-both
       base
     , call-count-plugin
 
-test-suite test-counter
+test-suite test-counter-main
   import: opts
   type: exitcode-stdio-1.0
   main-is: Main.hs
   hs-source-dirs:
-      test-suites/counter
+      test-suites/counter-main
+  build-depends:
+      base
+    , call-count-plugin
+
+test-suite test-counter-foo-bar-main
+  import: opts
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules: Foo Bar
+  hs-source-dirs:
+      test-suites/counter-foo-bar-main
+  build-depends:
+      base
+    , call-count-plugin
+
+test-suite test-counter-foobar-main
+  import: opts
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules: FooBar
+  hs-source-dirs:
+      test-suites/counter-foobar-main
   build-depends:
       base
     , call-count-plugin
