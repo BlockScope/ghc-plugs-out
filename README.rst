@@ -1,5 +1,5 @@
-Plugs Out
-=========
+GHC Plugs Out
+=============
 Type checker plugins without the type checking.
 
 Introduction
