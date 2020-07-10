@@ -66,6 +66,13 @@ a pragma, only in source files that need the plugin.
     [1 of 1] Compiling Main
     >>> GHC-TcPlugin #1
 
+There may be no work to do trying to compile a second time with build.
+
+.. code-block:: pre
+
+    > cabal build test-wireup-pure-by-pragma
+    Up to date
+
 A plugin can also be wired up with an option, say in a cabal file. This is
 probably fine if all your modules need a plugin.
 
