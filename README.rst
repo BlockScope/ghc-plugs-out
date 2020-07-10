@@ -66,7 +66,7 @@ a pragma, only in source files that need the plugin.
     [1 of 1] Compiling Main
     >>> GHC-TcPlugin #1
 
-There may be no work to do trying to compile a second time with build.
+There may be no work to do trying build again.
 
 .. code-block:: pre
 
