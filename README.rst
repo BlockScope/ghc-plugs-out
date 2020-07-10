@@ -269,13 +269,12 @@ its init and stop functions are **always** called.
   +-------------------------------+------------+
 
 Takeaways
-_________
+---------
 * We should wire up type checker plugins with pragmas only in modules that need
   it.
 * Don't forget to flag pure plugins as such.
 * If GHC doesn't need help resolving constraints then it won't call out to your plugin.
 * Modules are the units of compilation.
-
 
 License
 -------
