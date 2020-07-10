@@ -279,6 +279,19 @@ _________
 * If GHC doesn't need help resolving constraints then it won't call out to your plugin.
 * Modules are the units of compilation.
 
+
+License
+-------
+
+.. code-block:: ascii
+
+    Copyright © Phil de Joux 2017-2020
+    Copyright © Block Scope Limited 2017-2020
+
+This software is subject to the terms of the Mozilla Public License, v2.0. If
+a copy of the MPL was not distributed with this file, you can obtain one at
+http://mozilla.org/MPL/2.0/.
+
 .. _ghc-plugs-out: https://github.com/BlockScope/ghc-plugs-out
 
 .. _ghc-2595: https://gitlab.haskell.org/ghc/ghc/issues/2595
@@ -288,4 +301,3 @@ _________
 .. [#] Multiple libraries were added to cabal 3.0, see fgaz-GSoC-2018_.
 .. [#] The error if you try is "Record update for insufficiently polymorphic field", see ghc-2595_.
 .. [#] These field haddock comments are verbatim from the GHC source.
-
