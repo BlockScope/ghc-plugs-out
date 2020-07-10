@@ -9,6 +9,12 @@ license:        MPL-2.0
 license-file:   LICENSE.md
 tested-with:    GHC == 8.10.1
 build-type:     Simple
+extra-source-files:
+  README.rst
+
+source-repository head
+  type: git
+  location: https://github.com/blockscope/ghc-plugs-out
 
 common opts
   ghc-options:
