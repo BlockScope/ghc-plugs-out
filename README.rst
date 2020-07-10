@@ -170,7 +170,6 @@ Move these functions into separate modules and we count one call for each module
 
 Undefined is not a Function
 ---------------------------
-
 If your plugin behaves badly it is going to hurt. GHC panics when any one of
 the functions required of a type checker plugin is implemented undefined.
 
@@ -223,7 +222,6 @@ existential qualifier and that is how TcPlugin is defined [#]_.
 
 Care Free
 ---------
-
 Type checker plugins are of course called on by GHC to resolve constraints.
 Some need solving and others don't. GHC knows that it can get an ``a`` from
 ``undefined`` but maybe a plugin can do better so we get called.
@@ -272,7 +270,6 @@ its init and stop functions are **always** called.
 
 Takeaways
 _________
-
 * We should wire up type checker plugins with pragmas only in modules that need
   it.
 * Don't forget to flag pure plugins as such.
@@ -282,7 +279,6 @@ _________
 
 License
 -------
-
 .. code-block:: ascii
 
     Copyright © Phil de Joux 2017-2020
