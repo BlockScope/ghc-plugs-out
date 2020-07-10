@@ -60,15 +60,13 @@ a pragma, only in source files that need the plugin.
     main :: IO a
     main = undefined
 
+The call count prints on first build but not when there's no work to do.
+
 .. code-block:: pre
 
     > cabal build test-wireup-pure-by-pragma
     [1 of 1] Compiling Main
     >>> GHC-TcPlugin #1
-
-There may be no work to do trying build again.
-
-.. code-block:: pre
 
     > cabal build test-wireup-pure-by-pragma
     Up to date
