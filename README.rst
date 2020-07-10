@@ -2,6 +2,8 @@ GHC Plugs Out
 =============
 Type checker plugins without the type checking.
 
+|cabal-ci|
+
 Introduction
 ------------
 When getting ready to launch, one of the steps is the plugs-out test. Can the
@@ -301,3 +303,5 @@ http://mozilla.org/MPL/2.0/.
 .. [#] Multiple libraries were added to cabal 3.0, see fgaz-GSoC-2018_.
 .. [#] The error if you try is "Record update for insufficiently polymorphic field", see ghc-2595_.
 .. [#] These field haddock comments are verbatim from the GHC source.
+
+.. |cabal-ci| image:: https://github.com/BlockScope/ghc-plugs-out/workflows/cabal/badge.svg
