@@ -11,7 +11,7 @@ umbilicals?
 When debugging GHC plugins, I've added tracing and changed the wiring.  Rather
 than throw those edits away, I've collected them in `ghc-plugs-out`_, a package
 of tests that don't supply any power or fuel for typechecking. It is the first
-multiple library package I've put together[#]_.
+multiple library package I've put together [#]_.
 
 Wiring Diagram
 --------------
