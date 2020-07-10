@@ -1,0 +1,64 @@
+name: cabal
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    name: ghc ${{ matrix.ghc }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        cabal: ["3.0"]
+        ghc:
+          - "8.8.3"
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/setup-haskell@v1
+      name: Setup GHC and cabal-install
+      with:
+        ghc-version: ${{ matrix.ghc }}
+        cabal-version: ${{ matrix.cabal }}
+
+    - uses: actions/cache@v1
+      name: cache ~/.cabal/store
+      with:
+        path: ~/.cabal/store
+        key: ${{ runner.os }}-${{ matrix.ghc }}-cabal
+
+    - name: build
+      run: |
+        cabal update
+        cabal build all --disable-tests
+
+    - name: build test-wireup-pure-by-option
+      run: cabal build test-wireup-pure-by-option
+
+    - name: build test-wireup-pure-by-pragma
+      run: cabal build test-wireup-pure-by-pragma
+
+    - name: build test-wireup-pure-by-both
+      run: cabal build test-wireup-pure-by-both
+
+    - name: build test-wireup-impure-by-option
+      run: cabal build test-wireup-impure-by-option
+
+    - name: build test-wireup-impure-by-pragma
+      run: cabal build test-wireup-impure-by-pragma
+
+    - name: build test-wireup-impure-by-both
+      run: cabal build test-wireup-impure-by-both
+
+    - name: build test-counter-main
+      run: cabal build test-counter-main
+
+    - name: build test-counter-foo-bar-main
+      run: cabal build test-counter-foo-bar-main
+
+    - name: build test-counter-foobar-main
+      run: cabal build test-counter-foobar-main
