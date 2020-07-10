@@ -2,9 +2,15 @@ cabal-version: 3.0
 
 name:           ghc-plugs-out
 version:        1.0.0.0
+synopsis:       Type checker plugins without the type checking.
+description:
+  Tests that show how typechecker plugins interact with GHC depending on their
+  purity, how they're wired up and whether GHC needs help typechecking.
+category:       Compiler Plugin
 author:         Phil de Joux
 maintainer:     phil.dejoux@blockscope.com
 copyright:      © 2020 Phil de Joux, © 2020 Block Scope Limited
+homepage:       https://github.com/blockscope/ghc-plugs-out
 license:        MPL-2.0
 license-file:   LICENSE.md
 tested-with:    GHC == 8.10.1
