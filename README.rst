@@ -1,9 +1,9 @@
----
-title: Plugs Out
-subtitle: Type checker plugins without the type checking.
-slug: Type checker plugins without the type checking.
-tags: haskell, tcplugins
----
+Plugs Out
+=========
+Type checker plugins without the type checking.
+
+Introduction
+------------
 When getting ready to launch, one of the steps is the plugs-out test. Can the
 spacecraft function on its own without power or fuel from all cables and
 umbilicals?
