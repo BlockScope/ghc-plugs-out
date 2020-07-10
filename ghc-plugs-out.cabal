@@ -25,7 +25,6 @@ source-repository head
 common opts
   ghc-options:
     -Wall
-    -Werror
     -Wincomplete-uni-patterns
     -Wcompat
     -Widentities
