@@ -1,6 +1,6 @@
 module CallCount.Pure.Plugin (plugin) where
 
-import Plugins (Plugin)
+import GHC.Corroborate
 import NoOp.Plugin (mkPureTcPlugin)
 import CallCount.TcPlugin (callCount)
 

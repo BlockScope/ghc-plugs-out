@@ -1,6 +1,6 @@
 module Undefined.Stop.Plugin (plugin) where
 
-import Plugins (Plugin)
+import GHC.Corroborate
 import NoOp.Plugin (undefStop, mkPureTcPlugin)
 
 plugin :: Plugin

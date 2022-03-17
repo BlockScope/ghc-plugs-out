@@ -6,8 +6,7 @@ module NoOp.Plugin
     , mkPureTcPlugin, mkImpureTcPlugin
     ) where
 
-import Plugins (Plugin(..), tcPlugin, defaultPlugin, purePlugin, impurePlugin)
-import TcRnTypes (TcPluginResult(..), TcPlugin(..))
+import GHC.Corroborate
 
 plugin :: Plugin
 plugin = mkPureTcPlugin noOp

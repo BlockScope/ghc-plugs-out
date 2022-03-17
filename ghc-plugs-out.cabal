@@ -41,6 +41,7 @@ library no-op-plugin
   build-depends:
       base >= 4.13 && < 5
     , ghc
+    , ghc-corroborate
 
 library undefined-init-plugin
   import: opts
@@ -51,6 +52,7 @@ library undefined-init-plugin
   build-depends:
       base >= 4.13 && < 5
     , ghc
+    , ghc-corroborate
     , no-op-plugin
 
 library undefined-solve-plugin
@@ -62,6 +64,7 @@ library undefined-solve-plugin
   build-depends:
       base >= 4.13 && < 5
     , ghc
+    , ghc-corroborate
     , no-op-plugin
 
 library undefined-stop-plugin
@@ -73,6 +76,7 @@ library undefined-stop-plugin
   build-depends:
       base >= 4.13 && < 5
     , ghc
+    , ghc-corroborate
     , no-op-plugin
 
 library call-count-plugin
@@ -86,6 +90,7 @@ library call-count-plugin
   build-depends:
       base >= 4.13 && < 5
     , ghc
+    , ghc-corroborate
     , th-printf
     , no-op-plugin
 

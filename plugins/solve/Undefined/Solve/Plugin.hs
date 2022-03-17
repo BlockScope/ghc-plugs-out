@@ -1,6 +1,6 @@
 module Undefined.Solve.Plugin (plugin) where
 
-import Plugins (Plugin)
+import GHC.Corroborate
 import NoOp.Plugin (undefSolve, mkPureTcPlugin)
 
 plugin :: Plugin

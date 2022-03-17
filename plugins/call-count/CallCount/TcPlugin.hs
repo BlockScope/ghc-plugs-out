@@ -4,9 +4,8 @@ module CallCount.TcPlugin (callCount) where
 
 import Language.Haskell.Printf (s)
 import Data.IORef (IORef)
-import IOEnv (newMutVar, readMutVar, writeMutVar)
-import TcPluginM (tcPluginIO)
-import TcRnTypes (TcPluginResult(..), TcPlugin(..), unsafeTcPluginTcM)
+import GHC.Corroborate
+
 
 newtype State = State{callref :: IORef Int}
 
