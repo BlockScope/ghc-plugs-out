@@ -228,12 +228,22 @@ test-suite test-counter-main
       base >= 4.13 && < 5
     , call-count-plugin
 
-test-suite test-counter-main-named
+test-suite test-in-turn
   import: opts
   type: exitcode-stdio-1.0
   main-is: Main.hs
   hs-source-dirs:
-      test-suites/counter-main-named
+      test-suites/counter-in-turn
+  build-depends:
+      base >= 4.13 && < 5
+    , call-count-plugin
+
+test-suite test-in-line
+  import: opts
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs:
+      test-suites/counter-in-line
   build-depends:
       base >= 4.13 && < 5
     , call-count-plugin
