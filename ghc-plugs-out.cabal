@@ -84,6 +84,8 @@ library call-count-plugin
   exposed-modules:
       CallCount.TcPlugin
       CallCount.Pure.Plugin
+      CallCount.Pure.Plugin1
+      CallCount.Pure.Plugin2
       CallCount.Impure.Plugin
   hs-source-dirs:
       plugins/call-count
@@ -244,6 +246,26 @@ test-suite test-in-line
   main-is: Main.hs
   hs-source-dirs:
       test-suites/counter-in-line
+  build-depends:
+      base >= 4.13 && < 5
+    , call-count-plugin
+
+test-suite test-in-turn-each
+  import: opts
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs:
+      test-suites/counter-in-turn-each
+  build-depends:
+      base >= 4.13 && < 5
+    , call-count-plugin
+
+test-suite test-in-line-each
+  import: opts
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs:
+      test-suites/counter-in-line-each
   build-depends:
       base >= 4.13 && < 5
     , call-count-plugin
