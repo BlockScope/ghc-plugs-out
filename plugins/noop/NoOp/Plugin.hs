@@ -3,9 +3,10 @@
 module NoOp.Plugin
     ( plugin
     , noOp, undefInit, undefSolve, undefStop
-    , mkPureTcPlugin, mkImpureTcPlugin
+    , mkPureTcPlugin, mkPureOptTcPlugin, mkImpureTcPlugin
     ) where
 
+import GHC.Driver.Plugins (CommandLineOption)
 import GHC.Corroborate
 
 plugin :: Plugin
@@ -66,4 +67,11 @@ mkImpureTcPlugin p =
     defaultPlugin
         { tcPlugin = const $ Just p
         , pluginRecompile = impurePlugin
+        }
+
+mkPureOptTcPlugin :: ([CommandLineOption] -> Maybe TcPlugin) -> Plugin
+mkPureOptTcPlugin p =
+    defaultPlugin
+        { tcPlugin = p
+        , pluginRecompile = purePlugin
         }
