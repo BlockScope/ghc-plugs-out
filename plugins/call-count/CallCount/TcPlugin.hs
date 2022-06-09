@@ -16,7 +16,7 @@ callCount = fromMaybe noOp $ optCallCount []
 optCallCount :: [CommandLineOption] -> Maybe TcPlugin
 optCallCount opts = Just $
     TcPlugin
-        { tcPluginInit = return . State =<< (unsafeTcPluginTcM $ newMutVar 1)
+        { tcPluginInit = State <$> unsafeTcPluginTcM (newMutVar 1)
 
         , tcPluginSolve = \State{callref = c} _ _ _ -> do
             n <- unsafeTcPluginTcM $ readMutVar c
