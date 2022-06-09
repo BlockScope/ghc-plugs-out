@@ -58,7 +58,7 @@ mkPureTcPlugin :: TcPlugin -> Plugin
 mkPureTcPlugin p =
     defaultPlugin
         { tcPlugin = const $ Just p
-#if __GLASGOW_HASKELL__ >= 804
+#if __GLASGOW_HASKELL__ >= 806
         , pluginRecompile = purePlugin
 #endif
         }
@@ -67,7 +67,7 @@ mkImpureTcPlugin :: TcPlugin -> Plugin
 mkImpureTcPlugin p =
     defaultPlugin
         { tcPlugin = const $ Just p
-#if __GLASGOW_HASKELL__ >= 804
+#if __GLASGOW_HASKELL__ >= 806
         , pluginRecompile = impurePlugin
 #endif
         }
@@ -76,7 +76,7 @@ mkPureOptTcPlugin :: ([CommandLineOption] -> Maybe TcPlugin) -> Plugin
 mkPureOptTcPlugin p =
     defaultPlugin
         { tcPlugin = p
-#if __GLASGOW_HASKELL__ >= 804
+#if __GLASGOW_HASKELL__ >= 806
         , pluginRecompile = purePlugin
 #endif
         }
