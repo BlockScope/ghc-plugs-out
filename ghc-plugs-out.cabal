@@ -13,7 +13,7 @@ copyright:      © 2020 Phil de Joux, © 2020 Block Scope Limited
 homepage:       https://github.com/blockscope/ghc-plugs-out
 license:        MPL-2.0
 license-file:   LICENSE.md
-tested-with:    GHC == 8.8.3, GHC == 8.10.1
+tested-with:    GHC == 8.2.2, GHC == 8.4.4, GHC == 8.6.5, GHC == 8.8.4, GHC == 8.10.7, GHC == 9.0.2, GHC == 9.2.2
 build-type:     Simple
 extra-source-files:
   changelog.md, README.rst
@@ -39,7 +39,7 @@ library no-op-plugin
   hs-source-dirs:
       plugins/noop
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , ghc
     , ghc-corroborate
 
@@ -50,7 +50,7 @@ library undefined-init-plugin
   hs-source-dirs:
       plugins/init
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , ghc
     , ghc-corroborate
     , no-op-plugin
@@ -62,7 +62,7 @@ library undefined-solve-plugin
   hs-source-dirs:
       plugins/solve
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , ghc
     , ghc-corroborate
     , no-op-plugin
@@ -74,7 +74,7 @@ library undefined-stop-plugin
   hs-source-dirs:
       plugins/stop
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , ghc
     , ghc-corroborate
     , no-op-plugin
@@ -90,7 +90,7 @@ library call-count-plugin
   hs-source-dirs:
       plugins/call-count
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , ghc
     , ghc-corroborate
     , th-printf
@@ -103,7 +103,7 @@ test-suite test-undefined-init
   hs-source-dirs:
       test-suites/undef-init
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , undefined-init-plugin
 
 test-suite test-undefined-init-carefree
@@ -113,7 +113,7 @@ test-suite test-undefined-init-carefree
   hs-source-dirs:
       test-suites/undef-init-carefree
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , undefined-init-plugin
 
 test-suite test-undefined-solve
@@ -123,7 +123,7 @@ test-suite test-undefined-solve
   hs-source-dirs:
       test-suites/undef-solve
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , undefined-solve-plugin
 
 test-suite test-undefined-solve-carefree
@@ -133,7 +133,7 @@ test-suite test-undefined-solve-carefree
   hs-source-dirs:
       test-suites/undef-solve-carefree
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , undefined-solve-plugin
 
 test-suite test-undefined-stop
@@ -143,7 +143,7 @@ test-suite test-undefined-stop
   hs-source-dirs:
       test-suites/undef-stop
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , undefined-stop-plugin
 
 test-suite test-undefined-stop-carefree
@@ -153,7 +153,7 @@ test-suite test-undefined-stop-carefree
   hs-source-dirs:
       test-suites/undef-stop-carefree
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , undefined-stop-plugin
 
 test-suite test-wireup-pure-by-option
@@ -164,7 +164,7 @@ test-suite test-wireup-pure-by-option
       test-suites/wireup-pure-by-option
   ghc-options: -Wall -fplugin CallCount.Pure.Plugin
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , call-count-plugin
 
 test-suite test-wireup-pure-by-pragma
@@ -174,7 +174,7 @@ test-suite test-wireup-pure-by-pragma
   hs-source-dirs:
       test-suites/wireup-pure-by-pragma
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , call-count-plugin
 
 test-suite test-wireup-pure-by-both
@@ -185,7 +185,7 @@ test-suite test-wireup-pure-by-both
       test-suites/wireup-pure-by-pragma
   ghc-options: -Wall -fplugin CallCount.Pure.Plugin
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , call-count-plugin
 
 test-suite test-wireup-impure-by-option
@@ -196,7 +196,7 @@ test-suite test-wireup-impure-by-option
       test-suites/wireup-impure-by-option
   ghc-options: -Wall -fplugin CallCount.Impure.Plugin
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , call-count-plugin
 
 test-suite test-wireup-impure-by-pragma
@@ -206,7 +206,7 @@ test-suite test-wireup-impure-by-pragma
   hs-source-dirs:
       test-suites/wireup-impure-by-pragma
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , call-count-plugin
 
 test-suite test-wireup-impure-by-both
@@ -217,7 +217,7 @@ test-suite test-wireup-impure-by-both
       test-suites/wireup-impure-by-pragma
   ghc-options: -Wall -fplugin CallCount.Impure.Plugin
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , call-count-plugin
 
 test-suite test-counter-main
@@ -227,7 +227,7 @@ test-suite test-counter-main
   hs-source-dirs:
       test-suites/counter-main
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , call-count-plugin
 
 test-suite test-in-turn
@@ -237,7 +237,7 @@ test-suite test-in-turn
   hs-source-dirs:
       test-suites/counter-in-turn
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , call-count-plugin
 
 test-suite test-in-line
@@ -247,7 +247,7 @@ test-suite test-in-line
   hs-source-dirs:
       test-suites/counter-in-line
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , call-count-plugin
 
 test-suite test-in-turn-each
@@ -257,7 +257,7 @@ test-suite test-in-turn-each
   hs-source-dirs:
       test-suites/counter-in-turn-each
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , call-count-plugin
 
 test-suite test-in-line-each
@@ -267,7 +267,7 @@ test-suite test-in-line-each
   hs-source-dirs:
       test-suites/counter-in-line-each
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , call-count-plugin
 
 test-suite test-counter-foo-bar-main
@@ -278,7 +278,7 @@ test-suite test-counter-foo-bar-main
   hs-source-dirs:
       test-suites/counter-foo-bar-main
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , call-count-plugin
 
 test-suite test-counter-foobar-main
@@ -289,5 +289,5 @@ test-suite test-counter-foobar-main
   hs-source-dirs:
       test-suites/counter-foobar-main
   build-depends:
-      base >= 4.13 && < 5
+      base >= 4.10 && < 5
     , call-count-plugin

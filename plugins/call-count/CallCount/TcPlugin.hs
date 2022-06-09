@@ -6,7 +6,6 @@ import Language.Haskell.Printf (s)
 import Data.Maybe (fromMaybe)
 import Data.IORef (IORef)
 import GHC.Corroborate
-import GHC.Driver.Plugins (CommandLineOption)
 import NoOp.Plugin
 
 newtype State = State{callref :: IORef Int}

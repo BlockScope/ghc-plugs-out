@@ -1,4 +1,4 @@
-{-# LANGUAGE RankNTypes #-}
+{-# LANGUAGE RankNTypes, CPP #-}
 
 module NoOp.Plugin
     ( plugin
@@ -6,7 +6,6 @@ module NoOp.Plugin
     , mkPureTcPlugin, mkPureOptTcPlugin, mkImpureTcPlugin
     ) where
 
-import GHC.Driver.Plugins (CommandLineOption)
 import GHC.Corroborate
 
 plugin :: Plugin
@@ -59,19 +58,25 @@ mkPureTcPlugin :: TcPlugin -> Plugin
 mkPureTcPlugin p =
     defaultPlugin
         { tcPlugin = const $ Just p
+#if __GLASGOW_HASKELL__ >= 804
         , pluginRecompile = purePlugin
+#endif
         }
 
 mkImpureTcPlugin :: TcPlugin -> Plugin
 mkImpureTcPlugin p =
     defaultPlugin
         { tcPlugin = const $ Just p
+#if __GLASGOW_HASKELL__ >= 804
         , pluginRecompile = impurePlugin
+#endif
         }
 
 mkPureOptTcPlugin :: ([CommandLineOption] -> Maybe TcPlugin) -> Plugin
 mkPureOptTcPlugin p =
     defaultPlugin
         { tcPlugin = p
+#if __GLASGOW_HASKELL__ >= 804
         , pluginRecompile = purePlugin
+#endif
         }
