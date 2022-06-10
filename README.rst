@@ -6,14 +6,20 @@ Type checker plugins without the type checking.
 
 Introduction
 ------------
-When getting ready to launch, one of the steps is the plugs-out test. Can the
-spacecraft function on its own without power or fuel from all cables and
+When getting ready to launch to space, one of the steps is the plugs-out test.
+Can the spacecraft function on its own without power or fuel from all cables and
 umbilicals?
 
 When debugging GHC plugins, I've added tracing and changed the wiring.  Rather
 than throw those edits away, I've collected them in `ghc-plugs-out`_, a package
-of tests that don't supply any power or fuel for typechecking. It is the first
-multiple library package I've put together [#]_.
+of tests that don't supply typechecking. It is the first multiple library
+package I've put together [#]_. The test suites in this package show how type
+checker plugins interact with GHC depending on:
+
+* their purity
+* how they're wired up
+* what options they see
+* whether GHC needs help type checking
 
 Wiring Diagram
 --------------
