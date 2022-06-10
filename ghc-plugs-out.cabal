@@ -4,8 +4,20 @@ name:           ghc-plugs-out
 version:        1.0.0.0
 synopsis:       Type checker plugins without the type checking.
 description:
-  Tests that show how typechecker plugins interact with GHC depending on their
-  purity, how they're wired up and whether GHC needs help typechecking.
+  A __plugs-out__ spacecraft has no cables or umbilicals connected. The plugins
+  in this package are __plugs-out__ in the sense that they do no type checking.
+
+  The test suites in this package show how type checker plugins interact with GHC
+  depending on:
+
+  * their purity
+
+  * how they're wired up
+
+  * what options they see
+
+  * whether GHC needs help type checking
+
 category:       Compiler Plugin
 author:         Phil de Joux
 maintainer:     phil.dejoux@blockscope.com

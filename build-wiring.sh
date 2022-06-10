@@ -1,4 +1,4 @@
-# The steps in .github/workflows/cabal.yml
+# The steps in .github/workflows/cabal.yml related to wiring up plugins.
 # You might like to run cabal update and cabal clean before running this script.
 cabal build all --disable-tests
 cabal build test-wireup-pure-by-option

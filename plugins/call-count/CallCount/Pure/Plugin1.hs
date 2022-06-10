@@ -1,1 +1,60 @@
+-- | This module re-exports the call count plugin so that it is available from
+-- another module name. This enables setting up tests between plugins and their
+-- options when a module pulls in multiple plugins.
+--
+-- @
+-- -- test-suites\/counter-in-line-each\/Main.hs
+-- {-# OPTIONS_GHC -fplugin CallCount.Pure.Plugin1 -fplugin-opt CallCount.Pure.Plugin1:A #-}
+-- {-# OPTIONS_GHC -fplugin CallCount.Pure.Plugin2 -fplugin-opt CallCount.Pure.Plugin2:B #-}
+-- ...
+-- Building test suite 'test-in-line-each'
+-- [1 of 1] Compiling Main
+-- >>> B #1
+-- >>> A #1
+-- >>> B #2
+-- >>> A #2
+-- @
+--
+-- @
+-- -- test-suites\/counter-in-line\/Main.hs
+-- {-# OPTIONS_GHC -fplugin CallCount.Pure.Plugin -fplugin-opt CallCount.Pure.Plugin:A #-}
+-- {-# OPTIONS_GHC -fplugin CallCount.Pure.Plugin -fplugin-opt CallCount.Pure.Plugin:B #-}
+-- ...
+-- Building test suite 'test-in-line'
+-- [1 of 1] Compiling Main
+-- >>> AB #1
+-- >>> AB #1
+-- >>> AB #2
+-- >>> AB #2
+-- @
+--
+-- @
+-- -- test-suites\/counter-in-turn-each\/Main.hs
+-- {-# OPTIONS_GHC     -fplugin CallCount.Pure.Plugin1 #-}
+-- {-# OPTIONS_GHC -fplugin-opt CallCount.Pure.Plugin1:A #-}
+-- {-# OPTIONS_GHC     -fplugin CallCount.Pure.Plugin2 #-}
+-- {-# OPTIONS_GHC -fplugin-opt CallCount.Pure.Plugin2:B #-}
+-- ...
+-- Building test suite 'test-in-turn-each'
+-- [1 of 1] Compiling Main
+-- >>> B #1
+-- >>> A #1
+-- >>> B #2
+-- >>> A #2
+-- @
+--
+-- @
+-- -- test-suites\/counter-in-turn\/Main.hs
+-- {-# OPTIONS_GHC     -fplugin CallCount.Pure.Plugin #-}
+-- {-# OPTIONS_GHC -fplugin-opt CallCount.Pure.Plugin:A #-}
+-- {-# OPTIONS_GHC     -fplugin CallCount.Pure.Plugin #-}
+-- {-# OPTIONS_GHC -fplugin-opt CallCount.Pure.Plugin:B #-}
+-- ...
+-- Building test suite 'test-in-turn'
+-- [1 of 1] Compiling Main
+-- >>> AB #1
+-- >>> AB #1
+-- >>> AB #2
+-- >>> AB #2
+-- @
 module CallCount.Pure.Plugin1 (plugin) where import CallCount.Pure.Plugin (plugin)
