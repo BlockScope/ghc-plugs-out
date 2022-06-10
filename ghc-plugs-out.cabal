@@ -242,6 +242,16 @@ test-suite test-counter-main
       base >= 4.10 && < 5
     , call-count-plugin
 
+test-suite test-counter-main-sublib
+  import: opts
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs:
+      test-suites/counter-main
+  build-depends:
+      base >= 4.10 && < 5
+    , ghc-plugs-out:call-count-plugin
+
 test-suite test-in-turn
   import: opts
   type: exitcode-stdio-1.0
