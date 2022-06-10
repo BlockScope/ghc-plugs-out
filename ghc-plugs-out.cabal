@@ -1,7 +1,7 @@
 cabal-version: 3.0
 
 name:           ghc-plugs-out
-version:        1.0.0.0
+version:        2.0.0.0
 synopsis:       Type checker plugins without the type checking.
 description:
   A __plugs-out__ spacecraft has no cables or umbilicals connected. The plugins
@@ -21,7 +21,7 @@ description:
 category:       Compiler Plugin
 author:         Phil de Joux
 maintainer:     phil.dejoux@blockscope.com
-copyright:      © 2020 Phil de Joux, © 2020 Block Scope Limited
+copyright:      © 2020-2022 Phil de Joux, © 2020-2022 Block Scope Limited
 homepage:       https://github.com/blockscope/ghc-plugs-out
 license:        MPL-2.0
 license-file:   LICENSE.md
